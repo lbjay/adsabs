@@ -24,6 +24,9 @@ class AppConfig(object):
     
     # account verification secret key. Generate it in the same way you generate SECRET KEY
     ACCOUNT_VERIFICATION_SECRET = None
+    
+    #whether to compress js and css files or not
+    COMPRESS_CSS_AND_JS = True
 
     SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(_basedir, 'app.db')
     DATABASE_CONNECT_OPTIONS = {}

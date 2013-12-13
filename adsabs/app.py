@@ -55,10 +55,9 @@ def create_app(config=config, app_name=None):
 
 def _configure_assets(app):
     
-    assets = Environment()
+    assets = Environment(app)
     # debug = True will turn off compression so I do the opposite of the name 
-    assets.debug = not COMPRESS_CSS_AND_JS
-    assets.init_app(app)
+    assets.debug = not config.COMPRESS_CSS_AND_JS
     pyload = PythonLoader('config.assets')
     bundles = pyload.load_bundles()
  
